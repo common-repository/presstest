@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="PressTest" default="build">
+    <!-- ============================================ -->
+    <!-- Target: docs                                 -->
+    <!-- ============================================ -->
+    <target name="docs">
+	<phpdocext 
+		title="PressTest Documentation"
+		programpath="/usr/bin/phpdoc"
+		destdir="docs"
+		sourcecode="false"
+		output="HTML:frames:earthli" 
+		quiet="true"
+		sourcepath="."
+		ignore="phpunit/,qunit/"
+		>
+	</phpdocext>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: build                                 -->
+    <!-- ============================================  -->
+    <target name="build" depends="docs">
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: tag                                   -->
+    <!-- ============================================  -->
+    <target name="tag" depends="build">
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: version                               -->  
+    <!-- ============================================  -->
+    <target name="dist" depends="build">
+    </target>
+
+    <!-- ============================================ -->
+    <!-- Target: test                                 -->  
+    <!-- ============================================ -->
+    <target name="test" depends="build">
+    </target>
+
+    <!-- ============================================ -->
+    <!-- Target: tar                                  -->  
+    <!-- ============================================ -->
+    <target name="tar" depends="build">
+    </target>
+</project>
